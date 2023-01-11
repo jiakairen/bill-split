@@ -5,22 +5,7 @@ import App from "./components/App";
 import Signup from "./components/authentication/Signup";
 import Login from "./components/authentication/Login";
 import reportWebVitals from "./reportWebVitals";
-import { createClient } from "@supabase/supabase-js";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
-const supabase = createClient(
-  `${process.env.REACT_APP_PROJECT_URL}`,
-  `${process.env.REACT_APP_PROJECT_ANON_KEY}`
-);
-
-async function getCountries() {
-  const countries = await supabase.from("countries").select();
-  console.log(countries);
-}
-
-// getCountries();
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
