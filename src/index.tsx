@@ -3,6 +3,19 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
+import { createClient } from "@supabase/supabase-js";
+
+const supabase = createClient(
+  `${process.env.REACT_APP_PROJECT_URL}`,
+  `${process.env.REACT_APP_PROJECT_ANON_KEY}`
+);
+
+async function getCountries() {
+  const countries = await supabase.from("countries").select();
+  console.log(countries);
+}
+
+getCountries();
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
