@@ -8,8 +8,6 @@ import reportWebVitals from "./reportWebVitals";
 import { createClient } from "@supabase/supabase-js";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
 const supabase = createClient(
   `${process.env.REACT_APP_PROJECT_URL}`,
   `${process.env.REACT_APP_PROJECT_ANON_KEY}`
