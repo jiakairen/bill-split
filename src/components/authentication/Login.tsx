@@ -1,5 +1,6 @@
 import { stripBasename } from "@remix-run/router";
 import React, { FC, useState } from "react";
+import { supabase } from "../../supabase-config";
 
 const Login: FC = () => {
   const [email, setEmail] = useState<string>("");
