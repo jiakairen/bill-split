@@ -2,8 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./components/App";
+import Signup from "./components/authentication/Signup";
+import Login from "./components/authentication/Login";
 import reportWebVitals from "./reportWebVitals";
 import { createClient } from "@supabase/supabase-js";
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const supabase = createClient(
   `${process.env.REACT_APP_PROJECT_URL}`,
@@ -15,9 +19,7 @@ async function getCountries() {
   console.log(countries);
 }
 
-getCountries();
-
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// getCountries();
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -26,7 +28,8 @@ const root = ReactDOM.createRoot(
 root.render(
   <Router>
     <Routes>
-      <Route path="/" element={<App />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/" element={<Login />} />
     </Routes>
   </Router>
 );
