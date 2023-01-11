@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
 import { createClient } from "@supabase/supabase-js";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const supabase = createClient(
   `${process.env.REACT_APP_PROJECT_URL}`,
@@ -16,8 +17,6 @@ async function getCountries() {
 }
 
 getCountries();
-
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
